@@ -1,3 +1,5 @@
+import CustomButton from './Button.js';
+
 class App extends React.Component{
     constructor(props){
         super(props);
@@ -6,7 +8,8 @@ class App extends React.Component{
     render(){
         return(
             <div>
-                <h1>Hello</h1>
+                <h1 className='page-title'>Buttons</h1>
+                <CustomButton />
             </div>
         );
     }
