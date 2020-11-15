@@ -1,17 +1,13 @@
-class CustomButton extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-
-        }
-    }
-    render(){
-        return(
-            <div className='btn-container'>
-                <button className='btn'>Default</button>
-            </div>
-        );
-    }
+let CustomButton = (props) => { 
+    return(
+        <div className='btn-container'>
+            <button className='btn btn-danger'>
+                <span className='material-icons material-icons-start'>add</span>
+                <span>Default</span>
+                <span className='material-icons material-icons-end'></span>
+            </button>
+        </div>
+    );
 }
 
 export default CustomButton
