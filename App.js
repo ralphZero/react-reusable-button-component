@@ -26,7 +26,7 @@ var App = function (_React$Component) {
                 React.createElement(
                     'h1',
                     { className: 'page-title' },
-                    'Buttons'
+                    'Button'
                 ),
                 React.createElement(CustomButton, null)
             );

@@ -8,7 +8,7 @@ class App extends React.Component{
     render(){
         return(
             <div>
-                <h1 className='page-title'>Buttons</h1>
+                <h1 className='page-title'>Button</h1>
                 <CustomButton />
             </div>
         );

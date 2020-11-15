@@ -4,6 +4,17 @@ html, body{
     padding: 0;
 }
 
+body{
+    padding: 2vh 10% 0;
+}
+
 .page-title{
     font-family: 'Poppins', sans-serif;
+}
+
+.page-title::before{
+    content: 'Reusable ';
+}
+.page-title::after{
+    content: ' Component';
 }
