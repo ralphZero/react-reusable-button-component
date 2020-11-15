@@ -9,22 +9,25 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var CustomButton = function (_React$Component) {
     _inherits(CustomButton, _React$Component);
 
-    function CustomButton() {
+    function CustomButton(props) {
         _classCallCheck(this, CustomButton);
 
-        return _possibleConstructorReturn(this, (CustomButton.__proto__ || Object.getPrototypeOf(CustomButton)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (CustomButton.__proto__ || Object.getPrototypeOf(CustomButton)).call(this, props));
+
+        _this.state = {};
+        return _this;
     }
 
     _createClass(CustomButton, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "div",
-                null,
+                'div',
+                { className: 'btn-container' },
                 React.createElement(
-                    "button",
-                    null,
-                    "Button"
+                    'button',
+                    { className: 'btn' },
+                    'Default'
                 )
             );
         }
