@@ -14,7 +14,13 @@ var App = function (_React$Component) {
     function App(props) {
         _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+        _this.handleClick = function (e) {
+            console.log('pressed');
+        };
+
+        return _this;
     }
 
     _createClass(App, [{
@@ -28,7 +34,7 @@ var App = function (_React$Component) {
                     { className: 'page-title' },
                     'Button'
                 ),
-                React.createElement(CustomButton, { value: 'Add', endIcon: 'add', color: 'secondary' })
+                React.createElement(CustomButton, { value: 'Add', endIcon: 'add', color: 'primary', onPressed: this.handleClick })
             );
         }
     }]);

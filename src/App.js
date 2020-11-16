@@ -5,11 +5,15 @@ class App extends React.Component{
         super(props);
     }
 
+    handleClick = (e) => {
+        console.log('pressed');
+    }
+
     render(){
         return(
             <div>
                 <h1 className='page-title'>Button</h1>
-                <CustomButton value='Add' endIcon='add' color='secondary'/>
+                <CustomButton value='Add' endIcon='add' color='primary' onPressed={this.handleClick}/>
             </div>
         );
     }

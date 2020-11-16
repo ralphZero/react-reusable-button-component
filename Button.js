@@ -6,7 +6,8 @@ var CustomButton = function CustomButton(props) {
         size = props.size,
         color = props.color,
         disabled = props.disabled,
-        disableShadow = props.disableShadow;
+        disableShadow = props.disableShadow,
+        onPressed = props.onPressed;
 
 
     var generateCss = function generateCss() {
@@ -44,7 +45,7 @@ var CustomButton = function CustomButton(props) {
         circle.style.top = event.clientY - button.offsetTop - radius + 'px';
         circle.classList.add("ripple");
 
-        var ripple = button.getElementsByClassName("ripple")[0];
+        var ripple = button.querySelector(".ripple");
 
         if (ripple) {
             ripple.remove();
@@ -53,12 +54,17 @@ var CustomButton = function CustomButton(props) {
         button.appendChild(circle);
     }
 
+    var handleOnPressed = function handleOnPressed(e) {
+        createRipple(e);
+        onPressed(e);
+    };
+
     return React.createElement(
         'div',
         { className: 'btn-container' },
         React.createElement(
             'button',
-            { className: generateCss(), disabled: handleDisabled(), onClick: createRipple },
+            { className: generateCss(), disabled: handleDisabled(), onClick: handleOnPressed },
             React.createElement(
                 'span',
                 { className: 'material-icons material-icons-start' },

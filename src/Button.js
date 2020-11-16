@@ -1,6 +1,6 @@
 const CustomButton = (props) => {
 
-    const {variant, startIcon, endIcon, value, size, color, disabled, disableShadow} = props;
+    const {variant, startIcon, endIcon, value, size, color, disabled, disableShadow, onPressed} = props;
 
     let generateCss = () => {
         let list = ['btn'];
@@ -32,7 +32,7 @@ const CustomButton = (props) => {
         circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
         circle.classList.add("ripple");
     
-        const ripple = button.getElementsByClassName("ripple")[0];
+        const ripple = button.querySelector(".ripple");
     
         if (ripple) {
           ripple.remove();
@@ -41,9 +41,14 @@ const CustomButton = (props) => {
         button.appendChild(circle);
     }
 
+    const handleOnPressed = (e) => {
+        createRipple(e);
+        onPressed(e);
+    }
+
     return(
         <div className='btn-container'>
-            <button className={generateCss()} disabled={handleDisabled()} onClick={createRipple}>
+            <button className={generateCss()} disabled={handleDisabled()} onClick={handleOnPressed}>
                 <span className='material-icons material-icons-start'>{handleIcon('left')}</span>
                 <span>{value}</span>
                 <span className='material-icons material-icons-end'>{handleIcon('right')}</span>
