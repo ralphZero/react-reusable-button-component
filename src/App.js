@@ -13,7 +13,7 @@ class App extends React.Component{
         return(
             <div>
                 <h1 className='page-title'>Button</h1>
-                <CustomButton value='Add' endIcon='add' color='primary' onPressed={this.handleClick}/>
+                <CustomButton variant='text' value='Add' endIcon='add' color='primary' onPressed={this.handleClick}/>
             </div>
         );
     }

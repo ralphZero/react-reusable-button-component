@@ -71,6 +71,13 @@
     border: none !important;
     box-shadow: none !important;
 }
+
+.btn-text:disabled{
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color:var(--default) !important;
+}
 /*Sizes*/
 .btn-sm{
     padding: 0.25rem 0.5rem !important;
@@ -93,13 +100,13 @@
     background-color: var(--bg-primary-focus) !important;
     border-color: var(--bg-primary-focus) !important;
 }
-.btn-primary.btn-outline, .btn-primary.btn-text{
+.btn-primary.btn-outline:not(:disabled), .btn-primary.btn-text:not(:disabled){
     color: var(--bg-primary) !important;
 }
-.btn-primary.btn-outline:hover, 
-.btn-primary.btn-text:hover, 
-.btn-primary.btn-outline:focus, 
-.btn-primary.btn-text:focus{
+.btn-primary.btn-outline:hover:not(:disabled), 
+.btn-primary.btn-text:hover:not(:disabled), 
+.btn-primary.btn-outline:focus:not(:disabled), 
+.btn-primary.btn-text:focus:not(:disabled){
     color: var(--bg-primary) !important;
     background-color: var(--bg-primary-shadow) !important;
 }
@@ -116,13 +123,13 @@
     background-color: var(--bg-secondary-focus) !important;
     border-color: var(--bg-secondary-focus) !important;
 }
-.btn-secondary.btn-outline, .btn-secondary.btn-text{
+.btn-secondary.btn-outline:not(:disabled), .btn-secondary.btn-text:not(:disabled){
     color: var(--bg-secondary) !important;
 }
-.btn-secondary.btn-outline:hover, 
-.btn-secondary.btn-text:hover, 
-.btn-secondary.btn-outline:focus, 
-.btn-secondary.btn-text:focus{
+.btn-secondary.btn-outline:hover:not(:disabled), 
+.btn-secondary.btn-text:hover:not(:disabled), 
+.btn-secondary.btn-outline:focus:not(:disabled), 
+.btn-secondary.btn-text:focus:not(:disabled){
     color: var(--bg-secondary) !important;
     background-color: var(--bg-secondary-shadow) !important;
 }
@@ -139,13 +146,13 @@
     background-color: var(--bg-danger-focus) !important;
     border-color: var(--bg-danger-focus) !important;
 }
-.btn-danger.btn-outline, .btn-danger.btn-text{
+.btn-danger.btn-outline:not(:disabled), .btn-danger.btn-text:not(:disabled){
     color: var(--bg-danger) !important;
 }
-.btn-danger.btn-outline:hover, 
-.btn-danger.btn-text:hover, 
-.btn-danger.btn-outline:focus, 
-.btn-danger.btn-text:focus{
+.btn-danger.btn-outline:hover:not(:disabled), 
+.btn-danger.btn-text:hover:not(:disabled), 
+.btn-danger.btn-outline:focus:not(:disabled), 
+.btn-danger.btn-text:focus:not(:disabled){
     color: var(--bg-danger) !important;
     background-color: var(--bg-danger-shadow) !important;
 }

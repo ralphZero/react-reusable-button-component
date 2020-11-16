@@ -34,7 +34,7 @@ var App = function (_React$Component) {
                     { className: 'page-title' },
                     'Button'
                 ),
-                React.createElement(CustomButton, { value: 'Add', endIcon: 'add', color: 'primary', onPressed: this.handleClick })
+                React.createElement(CustomButton, { variant: 'text', value: 'Add', endIcon: 'add', color: 'primary', onPressed: this.handleClick })
             );
         }
     }]);
