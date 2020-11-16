@@ -15,6 +15,9 @@
 }
 .btn-container{display: inline-block;}
 .btn{
+    position: relative;
+    overflow: hidden;
+
     display: inline-flex;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 400;
@@ -145,4 +148,20 @@
 .btn-danger.btn-text:focus{
     color: var(--bg-danger) !important;
     background-color: var(--bg-danger-shadow) !important;
+}
+
+
+span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
 }

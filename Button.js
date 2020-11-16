@@ -32,12 +32,33 @@ var CustomButton = function CustomButton(props) {
         return disabled ? true : false;
     };
 
+    function createRipple(event) {
+        var button = event.currentTarget;
+
+        var circle = document.createElement("span");
+        var diameter = Math.max(button.clientWidth, button.clientHeight);
+        var radius = diameter / 2;
+
+        circle.style.width = circle.style.height = diameter + 'px';
+        circle.style.left = event.clientX - button.offsetLeft - radius + 'px';
+        circle.style.top = event.clientY - button.offsetTop - radius + 'px';
+        circle.classList.add("ripple");
+
+        var ripple = button.getElementsByClassName("ripple")[0];
+
+        if (ripple) {
+            ripple.remove();
+        }
+
+        button.appendChild(circle);
+    }
+
     return React.createElement(
         'div',
         { className: 'btn-container' },
         React.createElement(
             'button',
-            { className: generateCss(), disabled: handleDisabled() },
+            { className: generateCss(), disabled: handleDisabled(), onClick: createRipple },
             React.createElement(
                 'span',
                 { className: 'material-icons material-icons-start' },
