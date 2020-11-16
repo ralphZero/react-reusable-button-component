@@ -28,7 +28,7 @@ var App = function (_React$Component) {
                     { className: 'page-title' },
                     'Button'
                 ),
-                React.createElement(CustomButton, null)
+                React.createElement(CustomButton, { value: 'Add', endIcon: 'add', color: 'secondary' })
             );
         }
     }]);

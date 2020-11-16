@@ -9,7 +9,7 @@ class App extends React.Component{
         return(
             <div>
                 <h1 className='page-title'>Button</h1>
-                <CustomButton />
+                <CustomButton value='Add' endIcon='add' color='secondary'/>
             </div>
         );
     }
