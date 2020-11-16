@@ -3,15 +3,24 @@
 *{box-sizing: border-box;}
 
 html, body{
-    min-height: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 2vh 10% 0;
 }
-
+.page-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
 .page-title{
     font-family: 'Poppins', sans-serif;
 }
@@ -21,4 +30,60 @@ body{
 }
 .page-title::after{
     content: ' Component';
+}
+
+hr{
+    border: 1px solid #aaaaaa;
+    margin: 30px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+}
+@media screen and (max-width: 675px){
+    .grid{
+        grid-template-columns: repeat(1, auto);
+        justify-content: stretch;
+    }
+}
+.control{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 8px;
+}
+.control-row{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 8px;
+}
+.control-label{
+    font-size: 18px;
+    font-family: 'Ubuntu Mono', monospace;
+}
+.control-select{
+    width: 20rem;
+    height: 2rem;
+    font-size: 16px;
+    font-family: 'Ubuntu Mono', monospace;
+}
+@media screen and (max-width: 675px){
+    .control-select{
+        width: 100%;
+    }
+}
+.control-select[type=checkbox]{
+    width: auto;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: grey;
 }

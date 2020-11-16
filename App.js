@@ -20,6 +20,74 @@ var App = function (_React$Component) {
             console.log('pressed');
         };
 
+        _this.handleVariant = function (e) {
+            _this.setState({
+                variant: e.currentTarget.value
+            });
+        };
+
+        _this.handleColor = function (e) {
+            _this.setState({
+                color: e.currentTarget.value
+            });
+        };
+
+        _this.handleSize = function (e) {
+            _this.setState({
+                size: e.currentTarget.value
+            });
+        };
+
+        _this.handleDisabled = function (e) {
+            if (e.currentTarget.checked) {
+                _this.setState({
+                    disabled: true
+                });
+            } else {
+                _this.setState({
+                    disabled: false
+                });
+            }
+        };
+
+        _this.handleShadow = function (e) {
+            if (e.currentTarget.checked) {
+                _this.setState({
+                    hasShadow: true
+                });
+            } else {
+                _this.setState({
+                    hasShadow: false
+                });
+            }
+        };
+
+        _this.handleIcon = function (e) {
+            if (e.keyCode === 13) {
+                if (e.currentTarget.name == 'startIcon') {
+                    _this.setState({
+                        startIcon: e.currentTarget.value
+                    });
+                    e.currentTarget.blur();
+                } else {
+                    _this.setState({
+                        endIcon: e.currentTarget.value
+                    });
+                    e.currentTarget.blur();
+                }
+            }
+        };
+
+        _this.state = {
+            variant: '',
+            color: '',
+            size: '',
+            disabled: false,
+            hasShadow: false,
+            startIcon: '',
+            endIcon: '',
+            value: 'Default'
+        };
         return _this;
     }
 
@@ -30,11 +98,158 @@ var App = function (_React$Component) {
                 'div',
                 null,
                 React.createElement(
-                    'h1',
-                    { className: 'page-title' },
-                    'Button'
+                    'div',
+                    { className: 'page-header' },
+                    React.createElement(
+                        'h1',
+                        { className: 'page-title' },
+                        'Button'
+                    ),
+                    React.createElement(CustomButton, { value: this.state.value, variant: this.state.variant,
+                        color: this.state.color, size: this.state.size,
+                        disabled: this.state.disabled, disableShadow: this.state.hasShadow,
+                        startIcon: this.state.startIcon, endIcon: this.state.endIcon,
+                        onPressed: this.handleClick })
                 ),
-                React.createElement(CustomButton, { variant: 'text', value: 'Add', endIcon: 'add', color: 'primary', onPressed: this.handleClick })
+                React.createElement(
+                    'div',
+                    null,
+                    React.createElement(
+                        'div',
+                        { className: 'grid' },
+                        React.createElement(
+                            'div',
+                            { className: 'control' },
+                            React.createElement(
+                                'label',
+                                { className: 'control-label', htmlFor: 'variant' },
+                                'Variants'
+                            ),
+                            React.createElement(
+                                'select',
+                                { className: 'control-select', name: 'variant', onChange: this.handleVariant },
+                                React.createElement(
+                                    'option',
+                                    { value: '' },
+                                    'Default'
+                                ),
+                                React.createElement(
+                                    'option',
+                                    { value: 'outline' },
+                                    'Outline'
+                                ),
+                                React.createElement(
+                                    'option',
+                                    { value: 'text' },
+                                    'Text'
+                                )
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'control' },
+                            React.createElement(
+                                'label',
+                                { className: 'control-label', htmlFor: 'colors' },
+                                'Colors'
+                            ),
+                            React.createElement(
+                                'select',
+                                { className: 'control-select', name: 'colors', onChange: this.handleColor },
+                                React.createElement(
+                                    'option',
+                                    { value: '' },
+                                    'Default'
+                                ),
+                                React.createElement(
+                                    'option',
+                                    { value: 'primary' },
+                                    'Primary'
+                                ),
+                                React.createElement(
+                                    'option',
+                                    { value: 'secondary' },
+                                    'Secondary'
+                                ),
+                                React.createElement(
+                                    'option',
+                                    { value: 'danger' },
+                                    'Danger'
+                                )
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'control' },
+                            React.createElement(
+                                'label',
+                                { className: 'control-label', htmlFor: 'sizes' },
+                                'Sizes'
+                            ),
+                            React.createElement(
+                                'select',
+                                { className: 'control-select', name: 'sizes', onChange: this.handleSize },
+                                React.createElement(
+                                    'option',
+                                    { value: '' },
+                                    'Normal'
+                                ),
+                                React.createElement(
+                                    'option',
+                                    { value: 'sm' },
+                                    'Small'
+                                ),
+                                React.createElement(
+                                    'option',
+                                    { value: 'lg' },
+                                    'Large'
+                                )
+                            )
+                        ),
+                        React.createElement('div', null),
+                        React.createElement(
+                            'div',
+                            { className: 'control' },
+                            React.createElement(
+                                'label',
+                                { className: 'control-label', htmlFor: 'sizes' },
+                                'Leading Icon'
+                            ),
+                            React.createElement('input', { className: 'control-select', placeholder: 'Ex: call', type: 'text', name: 'startIcon', onKeyUp: this.handleIcon })
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'control' },
+                            React.createElement(
+                                'label',
+                                { className: 'control-label', htmlFor: 'sizes' },
+                                'Trailing Icon'
+                            ),
+                            React.createElement('input', { className: 'control-select', placeholder: 'Ex: call', type: 'text', name: 'endIcon', onKeyUpt: this.handleIcon })
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'control-row' },
+                            React.createElement(
+                                'label',
+                                { className: 'control-label', htmlFor: 'sizes' },
+                                'Disabled ?'
+                            ),
+                            React.createElement('input', { className: 'control-select', type: 'checkbox', name: 'disabled', onChange: this.handleDisabled })
+                        ),
+                        React.createElement('div', null),
+                        React.createElement(
+                            'div',
+                            { className: 'control-row' },
+                            React.createElement(
+                                'label',
+                                { className: 'control-label', htmlFor: 'sizes' },
+                                'Disable Shadow ?'
+                            ),
+                            React.createElement('input', { className: 'control-select', type: 'checkbox', name: 'disableShadow', onChange: this.handleShadow })
+                        )
+                    )
+                )
             );
         }
     }]);

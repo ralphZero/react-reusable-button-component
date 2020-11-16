@@ -115,7 +115,7 @@
 .btn-secondary {
     color: #fff;
     background-color: var(--bg-secondary);
-    border-color:var(--bg-secondary);
+    border-color:var(--bg-secondary) !important;
     box-shadow: 0px 4px 2rem 0.1rem var(--bg-secondary-shadow);
 }
 .btn-secondary:not(:disabled):focus, .btn-secondary:not(:disabled):hover{
@@ -138,7 +138,7 @@
 .btn-danger {
     color: #fff;
     background-color: var(--bg-danger);
-    border-color:var(--bg-danger);
+    border-color:var(--bg-danger) !important;
     box-shadow: 0px 4px 2rem 0.1rem var(--bg-danger-shadow);
 }
 .btn-danger:not(:disabled):focus, .btn-danger:not(:disabled):hover{
@@ -164,7 +164,7 @@ span.ripple {
     transform: scale(0);
     animation: ripple 600ms linear;
     background-color: rgba(255, 255, 255, 0.7);
-  }
+}
   
   @keyframes ripple {
     to {
